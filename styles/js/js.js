@@ -1,21 +1,48 @@
 // PDF Download functionality
 function downloadCV() {
     const element = document.getElementById('cvContent');
-    const opt = {
-        margin: 0.5,
-        filename: 'Alaka-Yusuf_Abdulbasit_CV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-    };
-
+    
     // Show the CV content temporarily for PDF generation
     element.style.display = 'block';
+    element.style.width = '100%';
+    element.style.margin = '0 auto';
+    
+    // Scroll to top of the page to ensure PDF starts from beginning
+    window.scrollTo(0, 0);
+    
+    // Small delay to ensure scroll completes
+    setTimeout(function() {
+        const opt = {
+            margin: [0.5, 0.5, 0.5, 0.5],
+            filename: 'Alaka-Yusuf_Abdulbasit_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { 
+                scale: 2, 
+                useCORS: true,
+                letterRendering: true,
+                logging: false,
+                scrollY: 0,
+                scrollX: 0,
+                windowHeight: element.scrollHeight
+            },
+            jsPDF: { 
+                unit: 'in', 
+                format: 'a4', 
+                orientation: 'portrait',
+                compress: true
+            },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        };
 
-    html2pdf().set(opt).from(element).save().then(function () {
-        // Hide the CV content again after PDF generation
-        element.style.display = 'none';
-    });
+        html2pdf().set(opt).from(element).save().then(function () {
+            // Hide the CV content again after PDF generation
+            element.style.display = 'none';
+        }).catch(function(error) {
+            console.error('PDF generation error:', error);
+            element.style.display = 'none';
+            alert('There was an error generating the PDF. Please try again.');
+        });
+    }, 100);
 }
 
 // Add event listeners to both download buttons
