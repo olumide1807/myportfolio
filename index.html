@@ -5,12 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulbasit Alaka-Yusuf | Software Developer</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Portfolio of Alaka-Yusuf Abdulbasit, a Nigerian software developer specializing in full-stack web applications, system architecture, and database management. View projects, skills, and contact info.">
+    <meta name="keywords"
+        content="Abdulbasit Alaka-Yusuf, software developer, full-stack developer, Nigeria, web developer portfolio, PHP, Laravel, JavaScript">
+    <meta name="author" content="Alaka-Yusuf Abdulbasit">
+    <link rel="canonical" href="https://myportfolio-mu-ruby.vercel.app/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <!-- Open Graph / Facebook, LinkedIn, WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myportfolio-mu-ruby.vercel.app/">
+    <meta property="og:title" content="Abdulbasit Alaka-Yusuf | Software Developer">
+    <meta property="og:description"
+        content="Nigerian software developer building interactive, user-friendly web applications. Explore my projects and get in touch.">
+    <meta property="og:image" content="https://myportfolio-mu-ruby.vercel.app/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abdulbasit Alaka-Yusuf | Software Developer">
+    <meta name="twitter:description"
+        content="Nigerian software developer building interactive, user-friendly web applications. Explore my projects and get in touch.">
+    <meta name="twitter:image" content="https://myportfolio-mu-ruby.vercel.app/images/og-image.png">
+    <meta name="twitter:site" content="@abdulbasitalaka">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Abdulbasit<span>.dev</span></a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -55,6 +106,47 @@
                         developing and managing custom software accross different industries</p>
                     <a href="#contact" class="btn">Hire Me</a>
                     <a href="#" class="btn btn-outline" id="downloadCVAbout">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>What I Bring to the Table</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive, interactive interfaces with HTML5, CSS3, JavaScript, Bootstrap, jQuery, and Ajax.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend Development</h3>
+                    <p>Server-side logic and APIs with PHP, Laravel, Python, Django, Java, and C++/C#/.Net.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Management</h3>
+                    <p>Designing and optimizing relational schemas, queries, and data models with MySQL.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>System Architecture</h3>
+                    <p>Planning scalable application structure end-to-end, from database design to deployment.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Version Control</h3>
+                    <p>Collaborative development workflows using Git, GitHub, and Visual Studio Code.</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Security-Minded Development</h3>
+                    <p>Building with data protection and secure authentication practices in mind, informed by ongoing interest in cybersecurity.</p>
                 </div>
             </div>
         </div>
@@ -145,49 +237,132 @@
             <div class="section-title">
                 <h2>Here's what I've worked on</h2>
             </div>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack Systems</button>
+                <!-- <button class="filter-btn" data-filter="ngo">NGO / Corporate</button> -->
+            </div>
+
             <div class="projects-container">
-                <div class="project">
+
+                <div class="project" data-category="fullstack">
                     <div class="project-image">
-                        <img src="images/abdulbasit-project-sims.jpg" alt="abdulbasit-project-sims">
+                        <img src="images/abdulbasit-project-sims.jpg" alt="Inventory Management System for Pharmacy" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Inventory Management System for Pharmacy</h3>
                         <p>A functional Inventory Management System for Pharmacy built as my final year project. I'm
-                            still
-                            working on adding more functionality even after my defense.</p>
-                        <br>
-                        <p>Login Details: Username: olumide1807@gmail.com Password: Gzda54sumuj29</p>
-                        <p>Tools: HTML, CSS, JavaScript, Ajax, PHP, MySQL</p>
+                            still working on adding more functionality even after my defense.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Ajax</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <p class="project-demo-note"><i class="fas fa-lock"></i> Demo available on request</p>
                         <a href="https://github.com/olumide1807/sims" class="btn btn-outline">View Project</a>
                     </div>
                 </div>
-                <div class="project">
+
+                <div class="project" data-category="fullstack">
                     <div class="project-image">
-                        <img src="images/abdulbasit-project-SMS.jpg" alt="abdulbasit-project-SMS">
+                        <img src="images/abdulbasit-project-SMS.jpg" alt="School Management System" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>School Management System</h3>
                         <p>A school management system with innovative features, built for schools to drive digital
                             transformation.</p>
-                        <br><br><br>
-                        <p>Login Details: olumide1807@gmail.com Password: gzda54sumuj29</p>
-                        <p>Tools: HTML, CSS, JavaScript, Node.js, MySQL</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <p class="project-demo-note"><i class="fas fa-lock"></i> Demo available on request</p>
                         <a href="https://basitech-sms.vercel.app/" class="btn btn-outline">View Project</a>
                     </div>
                 </div>
-                <div class="project">
+
+                <div class="project" data-category="web">
                     <div class="project-image">
-                        <img src="images/abdulbasit-project-bbgf.jpg" alt="abdulbasit-project-bbgf">
+                        <img src="images/abdulbasit-project-bbgf.jpg" alt="Responsive NGO Website" loading="lazy">
                     </div>
                     <div class="project-info">
                         <h3>Responsive NGO Website</h3>
                         <p>A fully responsive, user-friendly website built for an NGO, Bright Bloom Girls Foundation.
                         </p>
-                        <br><br><br><br><br><br><br>
-                        <p>Tools: HTML, CSS, JavaScript</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
                         <a href="https://brightbloomgirlsfoundation.org.ng/" class="btn btn-outline">View Project</a>
                     </div>
                 </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image">
+                        <img src="images/lps.jpg" alt="Logic Professional Services Website" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>Logic Professional Services — Corporate Website Redesign</h3>
+                        <p>A full redesign and rebuild of the website for Logic Professional Services (LPS), an
+                            indigenous audit, tax, actuarial, and financial advisory firm serving institutional
+                            clients such as CBN, Union Bank, Seplat, and Schneider Electric. Replaced a
+                            WordPress/Elementor site with a hand-built static site.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="https://lps.com.ng" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project" data-category="web">
+                    <div class="project-image">
+                        <img src="images/claricent.jpg" alt="Claricent Company Limited Website" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>Claricent Company Limited Website</h3>
+                        <p>A standard corporate website for Claricent Company Limited, a construction and engineering
+                            services company based in Ghana.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="https://claricentgroup.com" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="images/niob.jpg" alt="NIoB FCT Chapter Member Dashboard" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h3>Nigerian Institute of Building (NIoB) — FCT Chapter Member Dashboard</h3>
+                        <p>A full-stack web application built for the FCT Chapter of the National Institute of
+                            Building. Handles member registration and approval, annual dues collection, event
+                            management, project tracking, and financial management (expenses, cheques, imprest
+                            accounting), with separate admin and member portals.</p>
+                        <div class="project-tags">
+                            <span class="tag">Laravel</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <p class="project-demo-note"><i class="fas fa-lock"></i> Demo available on request</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
