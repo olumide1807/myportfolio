@@ -68,6 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Set footer copyright year dynamically
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+});
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menuToggle');
